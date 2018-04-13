@@ -14,12 +14,14 @@ class DefaultController extends Controller {
 	public function index( Request $request ) {
 
 		$refer = ReferManager::existsReferCode( $request );
+		$referCode = null;
 
 		if ( $refer ) {
 			Refer::create( $request );
+			$referCode = $request->get('ref');
 		}
 
-		return view( 'index.main' );
+		return view( 'index.main', compact('referCode') );
 	}
 
 	/*

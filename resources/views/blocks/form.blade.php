@@ -2,6 +2,9 @@
     <div class="col-md-12">
         <form action="{{ route('form') }}" class="form-horizontal" method="post">
             {{csrf_field()}}
+
+            <input type="hidden" name="refer_code" value="{{ $referCode }}">
+
             <div class="personal-data">
                 <div class="form-group">
                     <div class="col-sm-12">
