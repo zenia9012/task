@@ -19,6 +19,8 @@ class CreateClientsTable extends Migration
             $table->string('last_name');
             $table->string('email');
             $table->string('refer_code');
+            $table->string('referals_code')->nullable();
+            $table->string('referals_ip')->nullable();
             $table->string('password');
             $table->timestamps();
         });
