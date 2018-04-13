@@ -2,10 +2,22 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+
+	/*
+	 * save a client in a database
+	 * @param $firstName
+	 * @param $lastName
+	 * @param $email
+	 * @param $password
+	 * @param $referCode
+	 *
+	 * @return void
+	 */
 	public static function create( $firstName, $lastName, $email, $password, $referCode ) {
 		$client = new Client();
 
@@ -14,6 +26,8 @@ class Client extends Model
 		$client->email = $email;
 		$client->refer_code = $referCode;
 		$client->password = $password;
+		$client->created_at = Carbon::now();
+		$client->updated_at = Carbon::now();
 
 		$client->save();
     }
