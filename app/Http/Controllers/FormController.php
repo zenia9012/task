@@ -24,6 +24,15 @@ class FormController extends Controller
 
 		$referCode = strtolower(str_random(6));
 
+		if ($request->exists('refer_code')){
+			$referalCode = $request->input('refer_code');
+			$ip = $request->ip();
+
+			Client::create($firstName, $lastName, $email, $password, $referCode ,$referalCode, $ip );
+
+			return back()->with('message', 'Registration was success');
+		}
+
 		Client::create($firstName, $lastName, $email, $password, $referCode);
 
 		return back()->with('message', 'Registration was success');

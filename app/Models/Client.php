@@ -18,13 +18,15 @@ class Client extends Model
 	 *
 	 * @return void
 	 */
-	public static function create( $firstName, $lastName, $email, $password, $referCode ) {
+	public static function create( $firstName, $lastName, $email, $password, $referCode, $referalsCode = null, $referalIp = null ) {
 		$client = new Client();
 
 		$client->first_name = $firstName;
 		$client->last_name = $lastName;
 		$client->email = $email;
 		$client->refer_code = $referCode;
+		$client->referals_code = $referalsCode;
+		$client->referals_ip = $referalIp;
 		$client->password = $password;
 		$client->created_at = Carbon::now();
 		$client->updated_at = Carbon::now();
