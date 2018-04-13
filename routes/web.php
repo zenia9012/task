@@ -12,6 +12,8 @@
 */
 
 Route::get( '/', 'DefaultController@index' )->name('main');
+Route::get( '/news', 'DefaultController@news' )->name('news');
+
 Route::any( '/form', 'FormController@form' )->name('form');
 
 Auth::routes();
