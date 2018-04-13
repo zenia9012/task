@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\Notification;
 use App\Models\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 
 class FormController extends Controller
 {
@@ -28,7 +30,9 @@ class FormController extends Controller
 			$referalCode = $request->input('refer_code');
 			$ip = $request->ip();
 
-			Client::create($firstName, $lastName, $email, $password, $referCode ,$referalCode, $ip );
+			$client = Client::create($firstName, $lastName, $email, $password, $referCode ,$referalCode, $ip );
+
+			Mail::to($client)->send(new Notification());
 
 			return back()->with('message', 'Registration was success');
 		}

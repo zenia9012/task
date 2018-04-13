@@ -16,7 +16,7 @@ class Client extends Model
 	 * @param $password
 	 * @param $referCode
 	 *
-	 * @return void
+	 * @return Client $client
 	 */
 	public static function create( $firstName, $lastName, $email, $password, $referCode, $referalsCode = null, $referalIp = null ) {
 		$client = new Client();
@@ -32,5 +32,7 @@ class Client extends Model
 		$client->updated_at = Carbon::now();
 
 		$client->save();
+
+		return $client;
     }
 }
