@@ -1,0 +1,16 @@
+syntax:glob
+
+
+node_modules/
+composer.phar
+phpunit.phar
+.idea/
+^vendor/
+*.php~
+/public/storage
+.env
+storage/
+public/uploads
+
+syntax:regexp
+^vendor/
