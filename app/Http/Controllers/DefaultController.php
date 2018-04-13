@@ -17,8 +17,6 @@ class DefaultController extends Controller {
 
 		if ( $refer ) {
 			Refer::create( $request );
-
-			return redirect(route('main'));
 		}
 
 		return view( 'index.main' );
