@@ -16,7 +16,7 @@ class CreateRefersTable extends Migration
         Schema::create('refers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ip');
-            $table->string('referer');
+            $table->string('refer_code');
             $table->timestamps();
         });
     }
