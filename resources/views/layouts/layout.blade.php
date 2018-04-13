@@ -14,7 +14,9 @@
     <div id="site">
         @include('includes.header')
 
-        @yield('content')
+       <div class="container">
+            @yield('content')
+       </div>
     </div>
 
     <!-- Scripts -->

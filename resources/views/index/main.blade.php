@@ -1,5 +1,5 @@
 @extends('layouts.layout')
 
 @section('content')
-    <h1>Example Page</h1>
+    @include('blocks.form')
 @endsection
