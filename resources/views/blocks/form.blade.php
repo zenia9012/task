@@ -47,6 +47,10 @@
                     <div style="clear: both;"></div>
                 @endif
 
+                @if (\Session::has('message'))
+                    <div class="alert alert-success">{{ \Session::get('message') }}</div>
+                @endif
+                
             </div>
             <div class="form-gorup">
                 <button type="submit" class="btn btn-default">Send</button>
